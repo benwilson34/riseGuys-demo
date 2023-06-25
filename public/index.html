@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RiseGuys by carykh (Demo)</title>
+  <meta name="description" content="An AmazingRace-inspired version of Doodle Jump">
+
+  <meta property="og:title" content="RiseGuys by carykh">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="An AmazingRace-inspired version of Doodle Jump">
+
+  <!-- <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <p style="margin: 0;">Tips:</p>
+  <ul style="margin: 0;">
+    <li>Right-click to adjust the quality or make the game fullscreen.</li>
+    <li>Scale the player using the browser zoom controls (hold Ctrl or Cmd and press "+" or "-")</li>
+    <li>When the game ends, refresh the page to start over</li>
+    <li>Code can be found here: <a href="https://github.com/carykh/riseGuys">https://github.com/carykh/riseGuys</a></li>
+  </ul>
+  <div id="container"></div>
+
+  <script>
+    // see https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", (event) => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      const container = document.getElementById("container");
+      container.appendChild(player);
+      player.load("Jump!.swf");
+    });
+  </script>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</body>
+</html>
